@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1070,915</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1070,1046</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_GetClientDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -59,9 +59,15 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_GetClientDetails" sap:VirtualizedContainerService.HintSize="552,850" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1_GetClientDetails" sap:VirtualizedContainerService.HintSize="552,981" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="ClientInfo" />
       <Variable x:TypeArguments="x:String" Name="TaxID" />
@@ -72,6 +78,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;Getting ClientDetail(TaxID)&quot;]" />
     <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe ACME'" sap:VirtualizedContainerService.HintSize="510,758" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e7f47a5c7bfe80c591492694894a7e28" Selector="&lt;html title='ACME System 1 - Work Items' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
@@ -84,22 +91,19 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Text 'P'" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
+            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Client Detail" sap:VirtualizedContainerService.HintSize="434,106" sap2010:WorkflowViewState.IdRef="GetValue_1">
               <ui:GetValue.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e935082-cede-4282-959c-2ff9dde83813" InformativeScreenshot="8ace533d95d6a6dd0c3516a5f9a49d32" Selector="&lt;webctrl tag='P' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2e935082-cede-4282-959c-2ff9dde83813" InformativeScreenshot="8ace533d95d6a6dd0c3516a5f9a49d32" Selector="&lt;webctrl tag='P' /&gt;" WaitForReady="COMPLETE">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
                 </ui:Target>
               </ui:GetValue.Target>
               <ui:GetValue.Value>
                 <OutArgument x:TypeArguments="x:String">[ClientInfo]</OutArgument>
               </ui:GetValue.Value>
             </ui:GetValue>
-            <ui:Matches BuilderPattern="(?&lt;=TaxID:\s).\w\d*" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[ClientInfo]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=TaxID:\\s).\\w\\d*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=TaxID:\s).\w\d*" RegexOption="IgnoreCase, Compiled" Result="[TaxID_RegEx]" />
+            <ui:Matches BuilderPattern="(?&lt;=TaxID:\s).\w\d*" DisplayName="RegEX for TaxID" sap:VirtualizedContainerService.HintSize="434,59" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[ClientInfo]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;LIT&quot;,&quot;OperationName&quot;:&quot;Literal&quot;,&quot;OperationValue&quot;:&quot;(?&lt;=TaxID:\\s).\\w\\d*&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(?&lt;=TaxID:\s).\w\d*" RegexOption="IgnoreCase, Compiled" Result="[TaxID_RegEx]" />
             <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,275" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[TaxID_RegEx]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Object">
@@ -114,7 +118,7 @@
                     </sap:WorkflowViewStateService.ViewState>
                     <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[TaxID]</OutArgument>
+                        <OutArgument x:TypeArguments="x:String">[out_TaxID]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
