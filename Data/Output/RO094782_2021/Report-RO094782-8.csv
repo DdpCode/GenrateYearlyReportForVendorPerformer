@@ -1,4 +1,2 @@
-InvoiceNumber,Item,Date,Amount,Tax,Total,Currency
-815742,"Waste management services",2017-08-01,207337,41467.4,248804,RON
-445194,"Professional Services",2017-08-20,42454,8490.8,50944.8,USD
-579873,"Beverages and Catering",2017-08-06,184601,36920.2,221521,USD
+InvoiceNumber,Item,Amount,Tax,Total,Currency,Date
+566261,"IT Support",214856,42971.2,257827,RON,2017-08-24

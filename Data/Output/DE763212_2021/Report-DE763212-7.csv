@@ -1,3 +1,2 @@
-InvoiceNumber,Item,Date,Amount,Tax,Total,Currency
-310708,"Various paper supplies",2017-07-26,102993,20598.6,123592,USD
-567082,"Professional Services",2017-07-01,178254,35650.8,213905,EUR
+InvoiceNumber,Item,Amount,Tax,Total,Currency,Date
+334874,"Beverages and Catering",216196,43239.2,259435,USD,2017-07-26

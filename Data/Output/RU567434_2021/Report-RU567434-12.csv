@@ -1,0 +1,3 @@
+InvoiceNumber,Item,Amount,Tax,Total,Currency,Date
+581039,"Beverages and Catering",273933,54786.6,328720,RON,2017-12-04
+890400,"Concierge Services",55965,11193,67158,CAD,2017-12-01

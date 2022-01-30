@@ -112,13 +112,10 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:TextExists FormattedText="{x:Null}" sap2010:Annotation.AnnotationText="Checking WIID in dedicated area." DisplayName="Text Exists 'WIID'" sap:VirtualizedContainerService.HintSize="484,165" sap2010:WorkflowViewState.IdRef="TextExists_1" Occurrence="1" Result="[x]" Text="[WIID]">
                     <ui:TextExists.Target>
-                      <ui:Target Element="{x:Null}" Id="dc91b36c-a4b9-49d8-9d20-d5d6983fa8cf" InformativeScreenshot="562afd3348ac243f69a0f2694be43b05" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' idx='2' tag='DIV' /&gt;" TimeoutMS="2000">
+                      <ui:Target Element="{x:Null}" Id="dc91b36c-a4b9-49d8-9d20-d5d6983fa8cf" InformativeScreenshot="562afd3348ac243f69a0f2694be43b05" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div' idx='2' tag='DIV' /&gt;" TimeoutMS="2000" WaitForReady="COMPLETE">
                         <ui:Target.ClippingRegion>
                           <ui:Region Rectangle="114, 122, 129, 437" />
                         </ui:Target.ClippingRegion>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
                       </ui:Target>
                     </ui:TextExists.Target>
                     <sap:WorkflowViewStateService.ViewState>
@@ -135,7 +132,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Next Page'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT">
+                        <ui:Click AlterIfDisabled="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DelayBefore="1000" DisplayName="Click 'Next Page'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_4" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True" SimulateClick="False">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -147,13 +144,10 @@
                             </ui:CursorPosition>
                           </ui:Click.CursorPosition>
                           <ui:Click.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c66df868-dfc7-4c18-9202-252db77d5fc5" InformativeScreenshot="d98c7b0ced37376870294b5dbc20a579" Selector="&lt;webctrl aaname='Next »' tag='A' /&gt;">
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="c66df868-dfc7-4c18-9202-252db77d5fc5" InformativeScreenshot="d98c7b0ced37376870294b5dbc20a579" Selector="&lt;webctrl aaname='Next »' tag='A' /&gt;" WaitForReady="COMPLETE">
                               <ui:Target.TimeoutMS>
                                 <InArgument x:TypeArguments="x:Int32" />
                               </ui:Target.TimeoutMS>
-                              <ui:Target.WaitForReady>
-                                <InArgument x:TypeArguments="ui:WaitForReady" />
-                              </ui:Target.WaitForReady>
                             </ui:Target>
                           </ui:Click.Target>
                         </ui:Click>

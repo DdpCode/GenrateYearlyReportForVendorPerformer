@@ -1,7 +1,0 @@
-InvoiceNumber,Item,Amount,Tax,Total,Currency,Date
-158574,"Professional Services",256452,51290.4,307742,RON,2017-12-09
-591882,"Various paper supplies",277495,55499,332994,EUR,2017-12-06
-854654,"IT Support",67686,13537.2,81223.2,EUR,2017-12-26
-484995,"Professional Services",267926,53585.2,321511,CAD,2017-12-16
-279788,"Beverages and Catering",128517,25703.4,154220,CAD,2017-12-20
-838865,"Various paper supplies",87029,17405.8,104435,EUR,2017-12-27
